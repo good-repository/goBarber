@@ -14,10 +14,10 @@ function Routes() {
                 headerBackTitleVisible: false,
                 headerTitleAlign: 'center',
                 headerStyle: { backgroundColor: '#7159c1' },
-                headerTintColor: '#fff',
+                headerTintColor: '#fff'
             }}>
-                <Stack.Screen name="Usuários" component={SignIn} />
-                <Stack.Screen name="Cadastro" component={SignUp} />
+                <Stack.Screen name="signin" component={SignIn} options={{ headerShown: false }} />
+                <Stack.Screen name="signup" component={SignUp} options={{ headerShown: false }} />
                 {/* <Stack.Screen name="User" component={User} options={({ route }) => ({ title: route.params.user.name })} /> */}
                 {/* <Stack.Screen name="Repository" component={Repository} options={({ route }) => ({ title: route.params.repository.name })} /> */}
             </Stack.Navigator>
