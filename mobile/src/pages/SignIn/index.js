@@ -1,10 +1,16 @@
 import React from 'react';
 import { Text } from 'react-native';
 
+import Background from '~/components/Background'
+
 // import { Container } from './styles';
 
 const SignIn = () => {
-  return <Text>SignIn Route</Text>;
+  return (
+    <Background>
+      <Text>SignIn apenas</Text>
+    </Background>
+  )
 }
 
 export default SignIn;
