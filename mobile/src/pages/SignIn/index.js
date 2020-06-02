@@ -7,7 +7,7 @@ import Background from '../../components/Background'
 
 import { Container, Form, FormInput, SubmitButton, SignLink, SignLinkText } from './styles.js';
 
-const SignIn = () => {
+const SignIn = ({navigation}) => {
   return (
     <Background>
       <Container>
@@ -19,19 +19,19 @@ const SignIn = () => {
             keyboardType='email-address'
             autoCorrect={false}
             autoCaptalize='none'
-            placeholder='Digite seu email'
+            placeholder='Seu email'
           />
 
           <FormInput
             icon='lock-outline'
             secureTextEntry
-            placeholder='Digite sua senha'
+            placeholder='Sua senha'
           />
 
           <SubmitButton onPress={() => { }}>Acessar</SubmitButton>
         </Form>
 
-        <SignLink onPress={() => { }}>
+        <SignLink onPress={() => navigation.navigate('SignUp')}>
           <SignLinkText>Criar conta gratuita</SignLinkText>
         </SignLink>
       </Container>

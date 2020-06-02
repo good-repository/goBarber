@@ -16,8 +16,8 @@ function Routes() {
                 headerStyle: { backgroundColor: '#7159c1' },
                 headerTintColor: '#fff'
             }}>
-                <Stack.Screen name="signin" component={SignIn} options={{ headerShown: false }} />
-                <Stack.Screen name="signup" component={SignUp} options={{ headerShown: false }} />
+                <Stack.Screen name="SignIn" component={SignIn} options={{ headerShown: false }} />
+                <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown: false }} />
                 {/* <Stack.Screen name="User" component={User} options={({ route }) => ({ title: route.params.user.name })} /> */}
                 {/* <Stack.Screen name="Repository" component={Repository} options={({ route }) => ({ title: route.params.repository.name })} /> */}
             </Stack.Navigator>
