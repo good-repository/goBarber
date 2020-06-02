@@ -1,9 +1,9 @@
 import React from 'react';
 import { Image } from 'react-native';
 
-import logo from '~/assets/logo.png'
+import logo from '../../assets/logo.png'
 
-import Background from '~/components/Background'
+import Background from '../../components/Background'
 
 import { Container, Form, FormInput, SubmitButton, SignLink, SignLinkText } from './styles.js';
 
