@@ -39,14 +39,12 @@ export function* signUp({ payload }) {
         yield call(api.post, 'users', {
             name,
             email,
-            password,
-            provider: true
+            password
         })
 
         // history.push('/')
     } catch (err) {
-        Alert.error('Falha no cadastro', 'Erro no cadastro, verifique seus dados e tente novamente')
-
+        Alert.alert('Falha no cadastro', 'Erro no cadastro, verifique seus dados e tente novamente')
         yield put(signFailure())
     }
 }
