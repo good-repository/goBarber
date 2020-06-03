@@ -9,7 +9,7 @@ import './config/ReactotronConfig'
 import { store, persistor } from './store'
 import Routes from './routes'
 
-const src = () => {
+const Index = () => {
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
@@ -20,4 +20,4 @@ const src = () => {
   )
 }
 
-export default src;
+export default Index;
