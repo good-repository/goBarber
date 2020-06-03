@@ -4,10 +4,13 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
+import Icon from 'react-native-vector-icons/MaterialIcons'
+
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
 
 import Dashboard from './pages/Dashboard'
+import Profile from './pages/Profile'
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
@@ -18,8 +21,27 @@ function Routes() {
     return (
         <NavigationContainer>
             {isSigned ?
-                (<Tab.Navigator>
-                    <Tab.Screen name="Dashboard" component={Dashboard} />
+                (<Tab.Navigator screenOptions={({ route }) => ({
+                    tabBarIcon: ({ color, size }) => {
+                        let iconName
+                        if (route.name === 'Dashboard') {
+                            iconName = 'event'
+                        } else if (route.name === 'Profile') {
+                            iconName = 'person'
+                        }
+                        return <Icon name={iconName} size={20} color={color} />;
+                    },
+                })}
+                    tabBarOptions={{
+                        keyboardHidesTabBar: true,
+                        activeTintColor: '#FFF',
+                        activeBackgroundColor: '#7159c1',
+                        inactiveTintColor: 'rgba(255, 255, 255, 0.6)',
+                        inactiveBackgroundColor: '#7159c1'
+                    }}
+                >
+                    <Tab.Screen name="Dashboard" component={Dashboard} options={{ title: 'Agendamentos' }} />
+                    <Tab.Screen name="Profile" component={Profile} options={{ title: 'Meu perfil' }} />
                 </Tab.Navigator>)
                 :
                 (<Stack.Navigator>
