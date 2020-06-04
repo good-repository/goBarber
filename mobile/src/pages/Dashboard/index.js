@@ -4,7 +4,7 @@ import api from '../../services/api'
 import { Container, Title, List } from './styles';
 
 import Background from '../../components/Background'
-import Appointment from '~/components/Appointment';
+import Appointment from '../../components/Appointment';
 
 const Dashboard = () => {
     const [appointments, setAppointments] = useState([])
