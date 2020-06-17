@@ -21,21 +21,25 @@ function Routes() {
     return (
         <NavigationContainer>
             {isSigned ?
-                (<Tab.Navigator screenOptions={({ route }) => ({
-                    tabBarIcon: ({ color, size }) => {
-                        let iconName
-                        if (route.name === 'Dashboard') {
-                            iconName = 'event'
-                        } else if (route.name === 'Profile') {
-                            iconName = 'person'
-                        }
-                        return <Icon name={iconName} size={20} color={color} />;
-                    },
-                })}
+                (<Tab.Navigator
+                    tabBarPosition={'bottom'}
+                    screenOptions={({ route }) => ({
+                        tabBarIcon: ({ color, size }) => {
+                            let iconName
+                            if (route.name === 'Dashboard') {
+                                iconName = 'event'
+                            } else if (route.name === 'Profile') {
+                                iconName = 'person'
+                            }
+                            return <Icon name={iconName} size={20} color={color} />;
+                        },
+                    })}
                     tabBarOptions={{
-                        keyboardHidesTabBar: true,
-                        activeTintColor: '#FFF',
+                        showIcon: true,
+                        tabStyle: {height: 60},
+                        indicatorStyle: {backgroundColor: "#FFF"},
                         style: { backgroundColor: '#7159c1' },
+                        activeTintColor: '#FFF',
                         inactiveTintColor: 'rgba(255, 255, 255, 0.6)',
                     }}
                 >
