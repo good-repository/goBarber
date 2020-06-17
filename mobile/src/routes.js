@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useSelector } from 'react-redux'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
@@ -13,7 +13,7 @@ import Dashboard from './pages/Dashboard'
 import Profile from './pages/Profile'
 
 const Stack = createStackNavigator()
-const Tab = createBottomTabNavigator()
+const Tab = createMaterialTopTabNavigator();
 
 function Routes() {
     const isSigned = useSelector(state => state.auth.signed)
@@ -35,9 +35,8 @@ function Routes() {
                     tabBarOptions={{
                         keyboardHidesTabBar: true,
                         activeTintColor: '#FFF',
-                        activeBackgroundColor: '#7159c1',
+                        style: { backgroundColor: '#7159c1' },
                         inactiveTintColor: 'rgba(255, 255, 255, 0.6)',
-                        inactiveBackgroundColor: '#7159c1'
                     }}
                 >
                     <Tab.Screen name="Dashboard" component={Dashboard} options={{ title: 'Agendamentos' }} />
