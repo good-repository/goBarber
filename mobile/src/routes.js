@@ -31,7 +31,7 @@ function New() {
             <Stack.Screen name="SelectProvider" component={SelectProvider}
                 options={{ title: 'Selecione o prestador', headerTransparent: true }} />
             <Stack.Screen name="SelectDateTime" component={SelectDateTime}
-                options={{ title: 'Selecione um horário', headerTransparent: true }} />
+                options={{ title: 'Selecione o horário', headerTransparent: true }} />
             <Stack.Screen name="Confirm" component={Confirm} />
         </Stack.Navigator>
     );
