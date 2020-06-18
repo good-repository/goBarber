@@ -9,11 +9,33 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
 
+import SelectProvider from './pages/New/SelectProvider'
+import SelectDateTime from './pages/New/SelectDateTime'
+import Confirm from './pages/New/Confirm'
+
 import Dashboard from './pages/Dashboard'
 import Profile from './pages/Profile'
 
 const Stack = createStackNavigator()
 const Tab = createMaterialTopTabNavigator();
+
+function New() {
+    return (
+        <Stack.Navigator
+            screenOptions={{
+                headerTintColor: '#FFF',
+                headerLeftContainerStyle: { marginLeft: 20 },
+                headerTitleAlign: 'center',
+            }}
+        >
+            <Stack.Screen name="SelectProvider" component={SelectProvider}
+                options={{ title: 'Selecione o prestador', headerTransparent: true }} />
+            <Stack.Screen name="SelectDateTime" component={SelectDateTime}
+                options={{ title: 'Selecione um horário', headerTransparent: true }} />
+            <Stack.Screen name="Confirm" component={Confirm} />
+        </Stack.Navigator>
+    );
+}
 
 function Routes() {
     const isSigned = useSelector(state => state.auth.signed)
@@ -30,20 +52,23 @@ function Routes() {
                                 iconName = 'event'
                             } else if (route.name === 'Profile') {
                                 iconName = 'person'
+                            } else if (route.name === 'New') {
+                                iconName = 'add-circle-outline'
                             }
-                            return <Icon name={iconName} size={20} color={color} />;
+                            return <Icon name={iconName} size={25} color={color} />;
                         },
                     })}
                     tabBarOptions={{
                         showIcon: true,
-                        tabStyle: {height: 60},
-                        indicatorStyle: {backgroundColor: "#FFF"},
+                        tabStyle: { height: 60 },
+                        indicatorStyle: { backgroundColor: "#FFF" },
                         style: { backgroundColor: '#7159c1' },
                         activeTintColor: '#FFF',
-                        inactiveTintColor: 'rgba(255, 255, 255, 0.6)',
+                        labelStyle: { fontSize: 12 }
                     }}
                 >
                     <Tab.Screen name="Dashboard" component={Dashboard} options={{ title: 'Agendamentos' }} />
+                    <Tab.Screen name="New" component={New} options={{ title: 'Agendar' }} />
                     <Tab.Screen name="Profile" component={Profile} options={{ title: 'Meu perfil' }} />
                 </Tab.Navigator>)
                 :
