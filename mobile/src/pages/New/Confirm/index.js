@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { StackActions } from '@react-navigation/native'
 import { formatRelative, parseISO } from 'date-fns'
 import pt from 'date-fns/locale/pt'
 
@@ -22,6 +23,7 @@ const Confirm = ({ navigation, route }) => {
       date: time
     })
 
+    navigation.dispatch(StackActions.popToTop());
     navigation.navigate('Dashboard')
   }
 
