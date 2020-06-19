@@ -1,14 +1,16 @@
 import React from 'react';
-import { View } from 'react-native';
+
+import DateInput from '../../../components/DateInput'
 
 import Background from '../../../components/Background'
-
-// import { Container } from './styles';
+import { Container } from './styles';
 
 const SelectProvider = () => {
   return (
     <Background>
-
+      <Container>
+        <DateInput />
+      </Container>
     </Background>
   )
 }
