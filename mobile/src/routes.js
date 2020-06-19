@@ -32,7 +32,8 @@ function New() {
                 options={{ title: 'Selecione o prestador', headerTransparent: true }} />
             <Stack.Screen name="SelectDateTime" component={SelectDateTime}
                 options={{ title: 'Selecione o horário', headerTransparent: true }} />
-            <Stack.Screen name="Confirm" component={Confirm} />
+            <Stack.Screen name="Confirm" component={Confirm}
+                options={{ title: 'Confirmar agendamento', headerTransparent: true }} />
         </Stack.Navigator>
     );
 }
